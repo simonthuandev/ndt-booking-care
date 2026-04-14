@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {Navbar, Nav, Container} from 'react-bootstrap';
+import { Link } from "react-router";
 
 export default function NavbarSection({ scrolled }) {
   const [expanded, setExpanded] = useState(false);
@@ -46,6 +47,14 @@ export default function NavbarSection({ scrolled }) {
                 {label}
               </Nav.Link>
             ))}
+            <Link key='about-us' to="/about-us" className="nav-link"
+              onClick={() => {
+                setExpanded(false);
+                window.scrollTo(0, 0);
+              }}
+            >
+              Về chúng tôi
+            </Link>
           </Nav>
 
           <div className="d-flex align-items-center gap-3 mt-3 mt-lg-0">
